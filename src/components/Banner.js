@@ -24,17 +24,17 @@ export default function Banner() {
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center center",
-        backgroundImage: `url('https://www.reliancedigital.in/wp-content/uploads/2019/02/netflix_movies_cover.jpg')`,
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
       }}>
       <div className='banner__content'>
-        <h1 className='banner__title'>Movie Title</h1>
+        <h1 className='banner__title'>
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className='banner__buttons'>
           <button className='banner__button'>Play</button>
           <button className='banner__button'>My List</button>
         </div>
-        <h1 className='banner__description'>
-          {tunStr(`The Movie Description Goes Here`, 80)}
-        </h1>
+        <h1 className='banner__description'>{tunStr(movie?.overview, 150)}</h1>
       </div>
       <div className='banner--fadeButton' />
     </header>
