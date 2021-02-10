@@ -20,20 +20,19 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
           (movie) =>
             ((isLarge && movie.poster_path) ||
               (!isLarge && movie.backdrop_path)) && (
-              <img
-                key={movie.id}
-                className={`card_poster ${isLarge && "card_posterlarge"}`}
-                src={`${base_url}${
-                  isLarge ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt={movie.name}
-              />
+              <>
+                <img
+                  key={movie.id}
+                  className={`card_poster ${isLarge && "card_posterlarge"}`}
+                  src={`${base_url}${
+                    isLarge ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt={movie.name}
+                />
+                <p>{movie?.title || movie?.name || movie?.original_name}</p>
+              </>
             )
         )}
-
-        {/* <p> 
-              {movie?.title || movie?.name || movie?.original_name}
-            </p> */}
       </div>
     </div>
   );
