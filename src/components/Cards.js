@@ -31,6 +31,11 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
             )
         )}
       </div>
+      <p>
+        {movies.map(
+          (movie) => movie?.title || movie?.name || movie?.original_name
+        )}
+      </p>
     </div>
   );
 }
