@@ -1,6 +1,9 @@
 .card{
     color:#fff;
 }
+.title{
+    padding:10px 15px;
+}
 .card_posters{
     display: flex;
     overflow-y: hidden;

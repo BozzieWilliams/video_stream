@@ -14,7 +14,7 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
   }, [fetchUrl]);
   return (
     <div className='card'>
-      <h2>{title}</h2>
+      <h2 className='title'>{title}</h2>
       <div className='card_posters'>
         {movies.map(
           (movie) =>
@@ -30,12 +30,11 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
               />
             )
         )}
+
+        {/* <p> 
+              {movie?.title || movie?.name || movie?.original_name}
+            </p> */}
       </div>
-      <p>
-        {movies.map(
-          (movie) => movie?.title || movie?.name || movie?.original_name
-        )}
-      </p>
     </div>
   );
 }
