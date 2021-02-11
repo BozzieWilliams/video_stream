@@ -12,6 +12,12 @@
     /* flex-wrap: wrap;
     flex-direction: row; */
 }
+.tit{
+    position:relative;
+    padding:20px;
+    /* top: 50px; */
+    margin-right: 20px;
+}
 .card_posters::-webkit-scrollbar{
     display: none;
 }

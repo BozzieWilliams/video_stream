@@ -12,6 +12,8 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
     }
     fetchTheMovies();
   }, [fetchUrl]);
+  const tunStr = (str, n) =>
+    str?.length > n ? str.substr(0, n - 1) + "..." : str;
   return (
     <div className='card'>
       <h2 className='title'>{title}</h2>
@@ -29,7 +31,12 @@ export default function Cards({ title, fetchUrl, isLarge = false }) {
                   }`}
                   alt={movie.name}
                 />
-                <p>{movie?.title || movie?.name || movie?.original_name}</p>
+                <p className='tit'>
+                  {tunStr(
+                    movie?.title || movie?.name || movie?.original_name,
+                    4
+                  )}
+                </p>
               </>
             )
         )}
